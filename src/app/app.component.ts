@@ -3,8 +3,14 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+//import { HomePage } from '../pages/home/home';
+//import { ListPage } from '../pages/list/list';
+import { LoginPage } from '../pages/login/login';
+import { ProfilePage } from '../pages/profile/profile';
+import { StaffonleavePage } from '../pages/staffonleave/staffonleave';
+import { LeavePage } from '../pages/leave/leave';
+import { AcademicPage } from '../pages/academic/academic';
+import * as firebase from 'firebase';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,17 +18,35 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
+    var that = this;
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        that.rootPage = ProfilePage;
+        // ...
+      } else {
+        // User is signed out.
+        // ...
+        that.rootPage = LoginPage;
+      }
+    });
+
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      //{ title: 'Home', component: HomePage },
+    // { title: 'List', component: ListPage },
+      //{ title: 'Login', component: LoginPage },
+      { title: 'Profile', component: ProfilePage },
+      { title: 'Academic Calendar', component: AcademicPage },
+      { title: 'Leave', component: LeavePage },
+      { title: 'Staff on Leave', component: StaffonleavePage }
     ];
 
   }

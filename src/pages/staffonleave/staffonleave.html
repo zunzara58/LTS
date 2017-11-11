@@ -1,0 +1,76 @@
+<!--
+  Generated template for the StaffonleavePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<!--
+  Generated template for the LeavePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Staff on Leave</ion-title>
+   
+
+  
+  </ion-navbar>
+</ion-header>
+<style>
+    ion-content{
+      background: url('assets/img/ltsA.png') center / cover;
+    }
+  </style>
+
+<ion-content padding>
+  
+    <ion-card-content text-center>
+      <button ion-button color="bl" round>Staff on Leave</button>
+  </ion-card-content>
+
+    <ion-card  color="jun" *ngFor="let post of userPostsLists">
+
+  <ion-card-content>
+     <p>Lecturer Name:</p>
+         <ion-card full style="color: #080808; border:1000px; text-align:center;">{{post.lect}}</ion-card>
+  </ion-card-content>
+
+  <ion-card-content>
+     <p>Leave Date:</p>
+        <ion-card full style="color: #000000; border: 500px; text-align:center;">Start: {{post.startdate}}</ion-card>
+        <ion-card full style="color: #000000; border: 500px; text-align:center;">End: {{post.enddate}}</ion-card>
+  </ion-card-content>
+
+  <ion-card-content>
+      <p>Substitute Lecturer:</p>
+        <ion-card full style="color: #000000; border: 500px; text-align:center;">{{post.subs}}</ion-card>
+  </ion-card-content>
+
+  <ion-card-content>
+      <p>Note:{{post.body}}</p>
+
+  </ion-card-content>
+
+
+ 
+
+</ion-card>
+
+<button ion-button class = "refresh" block (click)="redirectToLeavePage()"><ion-icon name ="refresh-circle"> Refresh</ion-icon></button>
+
+
+<div padding text-center>
+  <button ion-button color="faiz" round (click)="logUserOut()">
+      <ion-icon name="people"></ion-icon>
+      Logout
+    </button>
+
+  </div>
+  
+  </ion-content>

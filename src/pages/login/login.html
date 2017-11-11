@@ -1,0 +1,59 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+
+</ion-header>
+<style>
+  ion-content{
+    background: url('assets/img/ltsA.png') center / cover;
+  }
+</style>
+
+<ion-content padding>
+
+  <div text-center style="margin-top: 50px;">  
+      <img src ="assets/img/leave.png"
+      style="border-radius: 500px; border: 3px solid rgb(236, 228, 228); width: 100px;"/>
+      <h1 style="color: #ebedef">Leave Track System</h1>
+  </div>
+    <ion-list>
+        
+          
+            <ion-label stacked style="color: #ffffff; margin-left: 10px;"><ion-icon name= "paper-plane"></ion-icon>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="email" name="email" required="required" style="border: 1px solid #ffffff; border-radius: 14px; color: #ffffff; font-style: bold;"></ion-input>
+         
+        
+          
+            <ion-label stacked style="color: #ffffff; margin-left: 10px;"><ion-icon name = "key"></ion-icon>Password</ion-label>
+            <ion-input type="password"[(ngModel)]="password" name="password" required="required" style="border: 1px solid #ebebef; border-radius: 14px; color: #ffffff; font-style: bold;"></ion-input>
+         
+    </ion-list>  
+
+      <div padding text-center>
+
+        <button *ngIf="email && password" ion-button color="faiz" round (click)="submitLogin()">
+          <ion-icon name="fastforward"></ion-icon>Login</button>
+        <!-- Show dead button if form is not filled -->
+        <button *ngIf="!email && !password" ion-button color="jun" round>
+          <ion-icon name="arrow-dropright"></ion-icon>Login Now</button>
+     </div>
+    
+  
+    
+      <!--  <br/>
+      <div padding text-center>
+        <button ion-button color="gray" block clear (click)="forgotpassword()">Forgot Password</button>
+      </div>
+    -->
+
+      <div padding text-center>
+          <button ion-button color="gray" block (click)="redirectToSignup()">Sign Up</button>
+        </div>
+    
+</ion-content>

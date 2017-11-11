@@ -4,15 +4,47 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Home</ion-title>
+    <ion-buttons start >
+        <button (click)="redirectToUserDetailPage()">
+            <ion-icon name="people"> Profile</ion-icon>
+          </button>
+   
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  
+<style>
+  ion-content{
+    background: url('assets/img/ltsB.png') center / cover;
+  }
+</style>
+            
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+
+
+<!--
+  <ion-list>
+     
+      <ion-item>
+          <ion-label fixed>Username</ion-label>
+          <ion-input type="text" value=""></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label fixed>Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      
+      </ion-list>
+    -->
+      <div padding>
+        <!--
+          <button ion-button secondary block>Sign In</button>
+          <button ion-button secondary block>Register</button>
+        -->
+      </div>
+  
 </ion-content>
